@@ -1,0 +1,52 @@
+<html>
+    <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <br class="box">
+        <div id="timer">00:00</div>   
+        <div class="container">
+            <div>TEAM 1</div>
+            <div>TEAM 2</div>
+         </div>
+         <div class="screen">
+            <div class="s12" id="s1">0</div>
+            <div class="s12" id="s2">0</div>
+         </div>
+         <div class="score">
+             <div class="scorehome">
+                <button onclick="oneh()" class="sh" id="sh1">+1</button>
+                <button onclick="twoh()" class="sh" id="sh2">+2</button>
+                <button onclick="threeh()" class="sh" id="sh3">+3</button>
+             </div>
+             <div class="scoreguest">
+                <button onclick="oneg()" class="sg" id="sg1">+1</button>
+                <button onclick="twog()" class="sg" id="sg2">+2</button>
+                <button onclick="threeg()" class="sg" id="sg3">+3</button>
+              </div> 
+         </div>
+         <div class="extra">
+         <div class="fandptxt">
+         <div id="foulshtxt">Fouls Won</div>
+         <div id="periodtxt">Period</div>
+         <div id="foulsgtxt">Fouls Won</div>
+         </div>
+         <div class="fandp">
+         <div class="fouls" id="foulsh">0</div>
+         <div id="period">0</div>
+         <div class="fouls" id="foulsg">0</div>
+         </div>
+         <div class="incfoul">
+             <button onclick="fh()" class="incfh" id="inc1">+</button>
+             <button onclick="pinc()" class="incp" id="inc2">+</button>
+             <button onclick="fg()" class="incfg" id="inc3">+</button>
+         </div>    
+         </div>
+         <div id="fw"><span>READY TO START ?</span></div>
+         <div class="newg">
+             <button onclick="newgame()" class="newgbtn">New Game</button>
+         </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>

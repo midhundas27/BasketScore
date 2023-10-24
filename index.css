@@ -1,0 +1,200 @@
+body {
+    margin: 0;
+    background-color: #000000;
+}
+@font-face{
+    font-family: digi-font;
+    src: url(digifont1.ttf);
+}
+.box{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #000000;
+    display: flex;
+
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    color: #000000;
+    font-size: 60px;
+    font-family: digi-font;
+    padding: 30px 0px;
+    font-weight: 500;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: .2px;
+}
+.screen{
+    display: flex;
+    justify-content: space-around;
+    color: #000000;
+    
+}
+.s12{
+    border: 5px dotted #b5b5b5;
+    width:200px;
+    text-align: center;
+    margin: 0px 0px 30px 0px;
+    padding: 30px 0px;
+    font-weight: 700;
+    font-size: 100px;
+    font-family: digi-font;
+    -webkit-text-stroke-color: #ff0000;
+    -webkit-text-stroke-width: .1px;
+}
+.score{
+    display: flex;
+    justify-content: space-around;
+    color: #ffffff;
+}
+.scorehome, .scoreguest{
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    align-items: center;
+    font-size: 28px;
+    font-family: digi-font;
+    
+}
+.sh,.sg{
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px dotted #0000ff;
+    font-family: digi-font;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: .1px;
+    cursor: pointer;
+}
+.sh:focus{
+    outline: none;
+}
+.sg:focus{
+    outline: none;
+}
+.newg{
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0px 30px 0px;
+}
+.newgbtn{
+    font-family: digi-font;
+    font-weight: 500;
+    font-size: 40px;
+    background-color: transparent;
+    border: 2px dotted #ffffff;
+    padding: 10px;
+    color: #000000;
+    -webkit-text-stroke-color: #00ff00;
+    -webkit-text-stroke-width: .5px;
+    cursor: pointer;
+}
+.newgbtn:focus{
+    outline: none;
+}
+.highlighted{
+      border-color: #00ff00;
+}
+#period{
+    border: 5px dotted #b5b5b5;
+    width:100px;
+    text-align: center;
+    font-weight: 700;
+    margin: 30px auto;
+    padding: 5px 0px;
+    font-size: 70px;
+    font-family: digi-font;
+    -webkit-text-stroke-color: #ffff00;
+    -webkit-text-stroke-width: .1px;
+}
+#timer{
+    border: 5px dotted #b5b5b5;
+    width:300px;
+    text-align: center;
+    margin: 30px auto 0px auto;
+    padding: 30px 0px;
+    font-weight: 700;
+    font-size: 100px;
+    font-family: digi-font;
+    -webkit-text-stroke-color: #ffff00;
+    -webkit-text-stroke-width: .1px;
+}
+.fandp{
+  display: flex;
+  justify-content: space-around;
+}
+.fouls{
+    border: 5px dotted #b5b5b5;
+    width:100px;
+    text-align: center;
+    font-weight: 700;
+    margin: 30px auto;
+    padding: 5px 0px;
+    font-size: 70px;
+    font-family: digi-font;
+    -webkit-text-stroke-color: #ff0000;
+    -webkit-text-stroke-width: .1px;
+}
+.fandptxt{
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    color: #000000;
+    font-size: 30px;
+    font-family: digi-font;
+    padding: 30px 0px;
+    font-weight: 500;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: .2px;
+}
+.extra{
+    margin: 0px 200px;
+}
+.incfoul{
+  display: flex;
+  justify-content: space-around;
+  
+}
+.incfh,.incfg,.incp{
+    width: 50px;
+    text-align: center;
+    height: 50px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px dotted #0000ff;
+    -webkit-text-stroke-color: #000000;
+    -webkit-text-stroke-width: .1px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+    font-size: 40px;
+    font-family: digi-font;
+    cursor: pointer;
+}
+.incp:focus{
+    outline: none;
+}
+.incfh:focus{
+    outline: none;
+}
+.incfg:focus{
+    outline: none;
+}
+#fw{
+    display: flex;
+    justify-content: space-around;
+    background-color: #000000;
+    color: #000000;
+    font-size: 60px;
+    font-family: digi-font;
+    padding: 30px 0px;
+    font-weight: 500;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: .2px;
+    white-space: pre-wrap;
+}
