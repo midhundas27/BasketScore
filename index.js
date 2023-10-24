@@ -7,8 +7,8 @@ let resulth = 0;
 let resultg = 0;
 let flh = 0;
 let flg = 0;
-let minutes = 0;
-let seconds = 3;
+let minutes = 12;
+let seconds = 0;
 let maxPeriod = 4;
 let periodno = 0; // Start from 0
 let time = document.getElementById("timer");
@@ -46,8 +46,8 @@ function pinc() {
         finwin.textContent = "PERIOD " + periodno + " "+ "STARTS"
         // Start the timer when the period is incremented
         timerPaused = false;
-        minutes = 0; // Reset minutes
-        seconds = 3; // Reset seconds
+        minutes = 12; // Reset minutes
+        seconds = 0; // Reset seconds
         updatetimedis(); // Update the timer display
         updatetime(); // Manually initiate timer update
         if (periodno === 4) {
@@ -55,7 +55,7 @@ function pinc() {
                 time.textContent = "GAME OVER";
                 finalwinner()
                 clearInterval(timerInterval);
-            }, 3000);
+            }, 12000);
         }
     } else if (timerPaused && periodno === maxPeriod) {
         disableButtons(true)
@@ -146,8 +146,8 @@ function newgame() {
     foulwong.textContent = 0;
     scoreh.textContent = 0;
     scoreg.textContent = 0;
-    minutes = 0;
-    seconds = 3;
+    minutes = 12;
+    seconds = 0;
     periodno = 0; // Reset period to 0
     per.textContent = 0; // Reset the displayed period to 0
     time.textContent = "00:00"
@@ -175,11 +175,11 @@ function finalwinner(){
     let res = "FINAL SCORE: TEAM 1 [" + resulth + "-" + resultg + "] TEAM 2"
     if (resulth > resultg) {
         let diff1 = resulth - resultg
-        finwin.textContent = res + "\nTEAM 1 BEATS TEAM2 BY " + diff1 + " " + "POINTS"}
+        finwin.textContent = res + "\nTEAM 1 BEATS TEAM 2 BY " + diff1 + " " + "POINTS"}
      else if (resulth < resultg){
           let diff2 = resultg - resulth
-        finwin.textContent = finwin.textContent = res + "\nTEAM 2 BEATS TEAM1 BY " + diff2 + " POINTS";} 
+        finwin.textContent = finwin.textContent = res + "\nTEAM 2 BEATS TEAM 1 BY " + diff2 + " POINTS";} 
      else {
-          finwin.textContent = res + "\nTEAM 1 DRAWS WITH TEAM2 HAVING " + resulth + " " + "POINTS EACH"}    
+          finwin.textContent = res + "\nTEAM 1 DRAWS WITH TEAM 2 HAVING " + resulth + " " + "POINTS EACH"}    
 }
 disableButtons(true)
