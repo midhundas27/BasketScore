@@ -31,7 +31,7 @@ The Basketball Scorecard is a web-based application that simplifies the process 
 - **Result and Margin Calculation:** Obtain the final result of the match and the margin of victory based on the scores.
 - **Complete Game Analysis:** Gain insights into the game through comprehensive analysis tools.
 - **Interactive Interface:** The user-friendly interface makes it easy to navigate and access the information you need, providing a seamless and enjoyable browsing experience.
-- **Responsive Design:** Whether you're on a desktop, tablet, or mobile device, the website adapts to different screen sizes, ensuring a consistent and visually appealing presentation.
+- **Responsive Design:** Ensure optimal viewing on various devices, from desktops to tablets and mobile phones.
 
 ---
 
