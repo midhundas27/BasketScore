@@ -38,7 +38,7 @@ The Basketball Scorecard is a web-based application that simplifies the process 
 ## Demo
 
 
-[Live Demo]([your-live-demo-link](https://midhundas27.github.io/BASKETBALL-SCORECARD/))
+[Live Demo](https://midhundas27.github.io/BASKETBALL-SCORECARD/)
 
 ![baskteball-scorecard(screenshot-1)](https://github.com/midhundas27/BASKETBALL-SCORECARD/assets/114917096/d8a4d1fa-4a45-4873-a5ac-2fede5fefaab)
 ![baskteball-scorecard(screenshot-2)](https://github.com/midhundas27/BASKETBALL-SCORECARD/assets/114917096/ef0950b5-d684-4f70-9041-f3482e584d95)
