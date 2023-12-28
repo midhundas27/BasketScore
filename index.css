@@ -4,7 +4,7 @@ body {
 }
 @font-face{
     font-family: digi-font;
-    src: url(../images/digifont1.ttf);
+    src: url(/../images/digifont1.ttf);
 }
 .box{
     width: 100%;
