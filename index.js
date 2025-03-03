@@ -437,7 +437,7 @@ function updatetime() {
             timerPaused = true;
             disableButtons(true);
             if (periodno < maxPeriod) {
-                finwin.textContent = "BREAK";
+                finwin.textContent = "IT'S BREAK TIME";
                 speakText(finwin.textContent, false);
                 saveGameState();
                 setTimeout(() => {
