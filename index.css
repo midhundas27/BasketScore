@@ -6,24 +6,41 @@ body {
     font-family: digi-font;
     src: url(digifont1.ttf);
 }
-.box{
+.outer-box{
     width: 100%;
-    min-height: 100vh;
     background-color: #000000;
+}
+.box{
     display: flex;
-
+    justify-content: center;
+    gap: 0px;
+    margin-top: 10px;
+}
+.center-box{
+    margin-top: 245px;
 }
 .container {
     display: flex;
     justify-content: space-around;
     background-color: #000000;
     color: #000000;
-    font-size: 60px;
+    font-size: 50px;
     font-family: digi-font;
-    padding: 30px 0px;
+    padding: 0px 10px 20px 10px;
     font-weight: 500;
     -webkit-text-stroke-color: #ffffff;
-    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-width: 1px;
+}
+.desc{
+    color: #ff0000;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    font-family: digi-font;
+    padding: 20px 10px 0px 10px;
+    font-weight: 500;
+    -webkit-text-stroke-color: #ffffff;
+    -webkit-text-stroke-width: .1px;
 }
 .screen{
     display: flex;
@@ -33,12 +50,12 @@ body {
 }
 .s12{
     border: 5px dotted #b5b5b5;
-    width:200px;
+    width:150px;
     text-align: center;
     margin: 0px 0px 30px 0px;
-    padding: 30px 0px;
+    padding: 15px 10px;
     font-weight: 700;
-    font-size: 100px;
+    font-size: 50px;
     font-family: digi-font;
     -webkit-text-stroke-color: #ff0000;
     -webkit-text-stroke-width: .1px;
@@ -54,14 +71,14 @@ body {
     justify-content: space-around;
     font-weight: 500;
     align-items: center;
-    font-size: 28px;
+    font-size: 20px;
     font-family: digi-font;
     
 }
 .sh,.sg{
-    width: 50px;
+    width: 40px;
     text-align: center;
-    height: 50px;
+    height: 40px;
     color: #ffffff;
     background-color: transparent;
     border: 2px dotted #0000ff;
@@ -80,15 +97,15 @@ body {
   align-items: center;
   display: flex;
   justify-content: space-around;
-  padding: 30px 0px 30px 0px;
+  padding: 40px 0px 40px 0px;
 }
 .newgbtn{
     font-family: digi-font;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 30px;
     background-color: transparent;
     border: 2px dotted #ffffff;
-    padding: 10px;
+    padding: 5px 10px;
     color: #000000;
     -webkit-text-stroke-color: #00ff00;
     -webkit-text-stroke-width: .5px;
@@ -105,21 +122,21 @@ body {
     width:100px;
     text-align: center;
     font-weight: 700;
-    margin: 30px auto;
-    padding: 5px 0px;
-    font-size: 70px;
+    margin: 0px auto;
+    padding: 15px 10px;
+    font-size: 50px;
     font-family: digi-font;
     -webkit-text-stroke-color: #ffff00;
     -webkit-text-stroke-width: .1px;
 }
 #timer{
     border: 5px dotted #b5b5b5;
-    width:300px;
+    width:250px;
     text-align: center;
-    margin: 30px auto 0px auto;
-    padding: 30px 0px;
+    margin: 40px auto 0px auto;
+    padding: 15px 0px;
     font-weight: 700;
-    font-size: 100px;
+    font-size: 50px;
     font-family: digi-font;
     -webkit-text-stroke-color: #ffff00;
     -webkit-text-stroke-width: .1px;
@@ -127,15 +144,16 @@ body {
 .fandp{
   display: flex;
   justify-content: space-around;
+  margin: 10px 0px 20px 0px;
 }
 .fouls{
     border: 5px dotted #b5b5b5;
     width:100px;
     text-align: center;
     font-weight: 700;
-    margin: 30px auto;
-    padding: 5px 0px;
-    font-size: 70px;
+    padding: 15px 10px;
+    font-size: 50px;
+    margin: 0px auto;
     font-family: digi-font;
     -webkit-text-stroke-color: #ff0000;
     -webkit-text-stroke-width: .1px;
@@ -147,20 +165,22 @@ body {
     color: #000000;
     font-size: 30px;
     font-family: digi-font;
-    padding: 30px 0px;
+    padding: 20px 0px;
     font-weight: 500;
     -webkit-text-stroke-color: #ffffff;
-    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-width: .5px;
 }
 .extra{
     margin: 0px 200px;
 }
 .incfoul{
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  text-align: center;
+  gap: 972px;
   
 }
-.incfh,.incfg,.incp{
+.incfh,.incfg{
     width: 50px;
     text-align: center;
     height: 50px;
@@ -176,9 +196,6 @@ body {
     font-family: digi-font;
     cursor: pointer;
 }
-.incp:focus{
-    outline: none;
-}
 .incfh:focus{
     outline: none;
 }
@@ -190,11 +207,391 @@ body {
     justify-content: space-around;
     background-color: #000000;
     color: #000000;
-    font-size: 60px;
+    font-size: 30px;
     font-family: digi-font;
-    padding: 30px 0px;
     font-weight: 500;
     -webkit-text-stroke-color: #ffffff;
-    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-width: .1px;
     white-space: pre-wrap;
+}
+
+.speech-controls {
+    margin: 30px auto 0px auto;
+    text-align: center;
+}
+
+.speech-btn {
+    background-color: transparent;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#fw {
+    padding: 40px 100px 0px 100px;
+    font-weight: bold;
+    min-height: 40px;
+    transition: all 0.3s ease;
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: center;
+}
+
+#speech-status {
+    border-radius: 4px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.setup-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.popup-content {
+    background: black;
+    padding: 20px;
+    border:2px dotted #0000ff;
+    border-radius: 8px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.popup-content label {
+    display: block;
+    margin: 10px 0;
+    color: #888;
+}
+
+.popup-content input {
+    background: transparent;
+    color: #ffffff;
+    padding: 5px;
+    width: 200px;
+    margin-left: 10px;
+    border: 2px dotted #0000ff;
+    border-radius: 4px;
+}
+.popup-content input:focus{
+    outline: none; 
+    border: 2px dotted #00ff00;
+}
+
+.popup-content button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: transparent;
+    border: 2px dotted #0000ff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.popup-content button:hover{
+    border: 2px dotted #00ff00;
+}
+.start-btn, .restart-btn {
+    margin: 0 10px;
+}
+
+.newg {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px 40px 0px;
+}
+
+/* Responsive Design - Large Desktops */
+@media (max-width: 1200px) {
+    .container {
+        font-size: 45px;
+    }
+    .s12 {
+        width: 130px;
+        font-size: 45px;
+    }
+    #timer {
+        width: 220px;
+        font-size: 45px;
+    }
+    .incfoul {
+        gap: 800px;
+    }
+    .extra {
+        margin: 0px 150px;
+    }
+}
+
+/* Responsive Design - Medium Desktops/Laptops */
+@media (max-width: 992px) {
+    .container {
+        font-size: 40px;
+    }
+    .s12 {
+        width: 120px;
+        font-size: 40px;
+    }
+    .scorehome, .scoreguest {
+        width: 180px;
+    }
+    #timer {
+        width: 200px;
+        font-size: 40px;
+    }
+    #period, .fouls {
+        width: 90px;
+        font-size: 40px;
+    }
+    .fandptxt {
+        font-size: 25px;
+    }
+    .newgbtn {
+        font-size: 25px;
+    }
+    .incfoul {
+        gap: 600px;
+    }
+    .incfh, .incfg {
+        font-size: 35px;
+    }
+    .extra {
+        margin: 0px 100px;
+    }
+    #fw {
+        padding: 40px 80px 0px 80px;
+        font-size: 25px;
+    }
+}
+
+/* Responsive Design - Tablets */
+@media (max-width: 768px) {
+    .center-box {
+        margin-top: 150px;
+    }
+    .container {
+        font-size: 35px;
+    }
+    .desc {
+        font-size: 18px;
+    }
+    .s12 {
+        width: 100px;
+        font-size: 35px;
+        padding: 10px 8px;
+        margin-bottom: 20px;
+    }
+    .scorehome, .scoreguest {
+        width: 150px;
+        font-size: 18px;
+    }
+    .sh, .sg {
+        width: 35px;
+        height: 35px;
+    }
+    #timer {
+        width: 180px;
+        font-size: 35px;
+        margin-top: 30px;
+    }
+    #period, .fouls {
+        width: 80px;
+        font-size: 35px;
+        padding: 10px 8px;
+    }
+    .fandptxt {
+        font-size: 22px;
+    }
+    .newgbtn {
+        font-size: 22px;
+    }
+    .incfoul {
+        gap: 400px;
+    }
+    .incfh, .incfg {
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+    }
+    .extra {
+        margin: 0px 50px;
+    }
+    #fw {
+        padding: 30px 50px 0px 50px;
+        font-size: 22px;
+    }
+    .popup-content {
+        width: 80%;
+        max-width: 500px;
+    }
+}
+
+/* Responsive Design - Mobile Phones */
+@media (max-width: 576px) {
+    .center-box {
+        margin-top: 100px;
+    }
+    .container {
+        font-size: 28px;
+        padding: 0px 5px 10px 5px;
+    }
+    .desc {
+        font-size: 16px;
+    }
+    .s12 {
+        width: 80px;
+        font-size: 28px;
+        padding: 8px 5px;
+        border-width: 3px;
+        margin-bottom: 15px;
+    }
+    .scorehome, .scoreguest {
+        width: 120px;
+        font-size: 16px;
+    }
+    .sh, .sg {
+        width: 30px;
+        height: 30px;
+    }
+    #timer {
+        width: 150px;
+        font-size: 28px;
+        padding: 10px 0px;
+        margin-top: 20px;
+        border-width: 3px;
+    }
+    #period, .fouls {
+        width: 70px;
+        font-size: 28px;
+        padding: 8px 5px;
+        border-width: 3px;
+    }
+    .fandptxt {
+        font-size: 18px;
+    }
+    .newgbtn {
+        font-size: 18px;
+        padding: 4px 8px;
+    }
+    .incfoul {
+        gap: 200px;
+    }
+    .incfh, .incfg {
+        width: 40px;
+        height: 40px;
+        font-size: 25px;
+    }
+    .extra {
+        margin: 0px 20px;
+    }
+    #fw {
+        padding: 20px 20px 0px 20px;
+        font-size: 18px;
+    }
+    .speech-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    .newg {
+        padding: 15px 0px 30px 0px;
+    }
+    .fandp {
+        margin: 5px 0px 10px 0px;
+    }
+    .popup-content input {
+        width: 150px;
+    }
+    .popup-content {
+        padding: 15px;
+    }
+    .popup-content button {
+        padding: 8px 15px;
+    }
+}
+
+/* Responsive Design - Small Mobile Phones */
+@media (max-width: 375px) {
+    .center-box {
+        margin-top: 80px;
+    }
+    .container {
+        font-size: 24px;
+    }
+    .desc {
+        font-size: 14px;
+    }
+    .s12 {
+        width: 65px;
+        font-size: 24px;
+        padding: 5px 3px;
+        border-width: 2px;
+    }
+    .scorehome, .scoreguest {
+        width: 100px;
+        font-size: 14px;
+    }
+    .sh, .sg {
+        width: 25px;
+        height: 25px;
+    }
+    #timer {
+        width: 130px;
+        font-size: 24px;
+        padding: 8px 0px;
+        border-width: 2px;
+    }
+    #period, .fouls {
+        width: 60px;
+        font-size: 24px;
+        padding: 5px 3px;
+        border-width: 2px;
+    }
+    .fandptxt {
+        font-size: 16px;
+        padding: 10px 0px;
+    }
+    .newgbtn {
+        font-size: 16px;
+    }
+    .incfoul {
+        gap: 150px;
+    }
+    .incfh, .incfg {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+    #fw {
+        font-size: 16px;
+    }
+    .speech-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    .popup-content h2 {
+        font-size: 18px;
+    }
+    .popup-content label {
+        font-size: 14px;
+    }
+    .popup-content input {
+        width: 120px;
+    }
 }
