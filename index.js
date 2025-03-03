@@ -244,8 +244,8 @@ function showSetupPopup() {
             <label style=" margin-top: 26px;" for="breakTimeInput">Break Time (secs):</label>
             </div>
             <div>
-            <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team1" value="team 1"></div>
-            <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team2" value="team 2"></div>
+            <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team1" value="Ankle Breakers"></div>
+            <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team2" value="Brick City"></div>
             <div style=" margin-top: 10px;"><input type="number" id="totalTime" min="1" value="1"></div>
             <div style=" margin-top: 10px;"><input type="number" id="numPeriods" min="1" value="1"></div>
             <div style=" margin-top: 10px;"><input type="number" id="breakTimeInput" min="1" value="1"></div>
@@ -263,8 +263,8 @@ function showSetupPopup() {
     };
     
     document.getElementById('startGameBtn').onclick = () => {
-        team1Name = (document.getElementById('team1').value || "TEAM 1").toUpperCase();
-        team2Name = (document.getElementById('team2').value || "TEAM 2").toUpperCase();
+        team1Name = (document.getElementById('team1').value || "ANKLE BREAKERS").toUpperCase();
+        team2Name = (document.getElementById('team2').value || "BRICK CITY").toUpperCase();
         const totalTime = parseInt(document.getElementById('totalTime').value) || 48;
         maxPeriod = parseInt(document.getElementById('numPeriods').value) || 4;
         breakTime = (parseInt(document.getElementById('breakTimeInput').value) || 5) * 1000;
