@@ -23,8 +23,8 @@ let breakTime = 5000;
 let speechEnabled = false;
 let ambientCommentaryInterval;
 let lastAmbientTime = 0;
-const minAmbientInterval = 3000;
-const maxAmbientInterval = 5000;
+const minAmbientInterval = 10000;
+const maxAmbientInterval = 12000;
 let speechQueue = [];
 let isSpeaking = false;
 let gameActive = false;
@@ -122,63 +122,40 @@ function setMaleVoice(utterance) {
 function getAmbientCommentary() {
     const ambientComments = [
         // General basketball-related
-        `What a beautiful day for ${team1Name} and ${team2Name}!`,
-        "The fans are really into this game tonight.",
-        "You can feel the energy in this arena today.",
-        "What a display of teamwork out there!",
-        "This crowd is on its feet for every play!",
-        "A classic basketball showdown unfolding here!",
-        "The intensity is off the charts tonight!",
+        `What a beautiful day for ${team1Name} and ${team2Name}, the atmosphere is electric.`,
+        "The fans are really into this game tonight, on their feet for every play.",
+        "What a display of teamwork out there, a classic basketball showdown.",
 
         // About host city
-        "This city really loves its basketball!",
-        "The streets outside are buzzing with game-day excitement!",
-        "This city’s fans know how to bring the noise!",
+        "This city really loves its basketball, the streets outside are buzzing with game-day excitement.",
 
         // About weather
-        "Perfect conditions for today's game!",
-        "A crisp evening, ideal for some indoor hoops action!",
+        "Perfect conditions for today's game, ideal for some indoor hoops action.",
 
         // About teams
-        `Both ${team1Name} and ${team2Name} have been playing well this season!`,
-        `${team1Name}’s defense is a wall tonight!`,
-        `${team2Name}’s offense is firing on all cylinders!`,
-        "The rivalry between these two teams goes back many years!",
-        `${team1Name} is showing why they’re a fan favorite!`,
-        `${team2Name} has that championship pedigree on display!`,
+        `Both ${team1Name} and ${team2Name} have been playing well this season, the rivalry between these two teams goes back many years.`,
+        `${team1Name} defense is a wall tonight has that championship pedigree on display.`,
+        `${team2Name} offense is firing on all cylinders showing why they are fan favorite.`,
 
         // About coaches
-        "The coaches are really animated on the sidelines!",
-        `${team1Name}’s coach is a master tactician under pressure!`,
-        `${team2Name}’s coach knows how to rally the troops!`,
-        "You can see the strategic genius at work from both benches!",
+        "The coaches are really animated on the sidelines, executing their master plans.",
+        `${team1Name} coach is a master tactician under pressure, a pure genius.`,
+        `${team2Name} coach knows how to rally the troops, especially in close encounters.`,
 
         // Strengths
-        `${team1Name}’s shooting is their strength tonight!`,
-        `${team2Name} excels at controlling the paint!`,
-        `Speed is ${team1Name}’s weapon in this game!`,
-        `${team2Name}’s rebounding is top-notch today!`,
-        "Both teams are showcasing their depth tonight!",
+        `${team1Name} shooting is their strength tonight, while ${team2Name} is more focused on rebounds.`,
+        "Both teams are showcasing their depth tonight, every player stands tall.",
 
         // Weaknesses
-        `${team1Name} might need to tighten up their turnovers!`,
-        `${team2Name}’s perimeter defense looks shaky!`,
-        `${team2Name} seems to struggle with fast breaks today!`,
+        `${team1Name} might need to tighten up their turnovers, before they screw up.`,
+        `${team2Name} perimeter defense looks shaky, causing a lot trouble.`,
 
-        // Additional variety
-        "We've got a great matchup today!",
-        "The atmosphere is electric!",
-        "This game’s got all the makings of a classic!",
-        "The players are leaving it all on the court!",
-        "What an incredible night for hoops fans!"
     ];
     let contextualComments = [];
     if (resulth > resultg && resulth - resultg > 10) contextualComments.push(`${team1Name} has a comfortable lead.`);
     else if (resultg > resulth && resultg - resulth > 10) contextualComments.push(`${team2Name} is dominating.`);
-    else if (Math.abs(resulth - resultg) < 5) contextualComments.push("This game could go either way.");
     if (flh > 5) contextualComments.push(`${team1Name} needs to watch those fouls.`);
     if (flg > 5) contextualComments.push(`${team2Name}'s foul count is piling up.`);
-    if (periodno === 1) contextualComments.push("Still early in the game.");
     else if (periodno === maxPeriod) contextualComments.push("Final period, every moment counts.");
     const allComments = [...ambientComments, ...contextualComments];
     return allComments[Math.floor(Math.random() * allComments.length)];
@@ -308,7 +285,7 @@ function showSetupPopup() {
         timerPaused = false;
         periodno = 1;
         per.textContent = periodno;
-        finwin.textContent = `PERIOD ${periodno} STARTS`;
+        finwin.textContent = `PERIOD ${periodno} STARTS, HERE WE GO`;
         speakText(finwin.textContent, false);
         updatetimedis();
         updatetime();
@@ -384,7 +361,7 @@ function loadGameState() {
         breakTime = state.breakTime || 5000;
         if (state.finwinText && finwin) finwin.textContent = state.finwinText;
         
-        // Restore timer display (GAME OVER or time)
+        // Restore timer display ( GAME OVER or time)
         time.textContent = state.timerText || `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
         
         scoreh.textContent = resulth;
@@ -402,9 +379,9 @@ function loadGameState() {
         
         const startBtn = document.querySelector('.start-btn');
         if (startBtn) {
-            // Check for game over conditions - either explicit state or end of max period with zero time
-            const isGameOver = state.timerText === "GAME OVER" || 
-                              (state.finwinText && state.finwinText.includes("GAME OVER")) ||
+            // Check for GAME OVER conditions - either explicit state or end of max period with zero time
+            const isGameOver = state.timerText === "THAT'S THE WHISTLE, GAME OVER" || 
+                              (state.finwinText && state.finwinText.includes("THAT'S THE WHISTLE! GAME OVER")) ||
                               (state.finwinText && (state.finwinText.includes("BEATS") || state.finwinText.includes("DRAWS"))) ||
                               (periodno >= maxPeriod && minutes === 0 && seconds === 0);
                               
@@ -435,7 +412,7 @@ function disableButtons(disable) {
 function fh() {
     flh += 1;
     foulwonh.textContent = flh;
-    finwin.textContent = `${team1Name} COMMITS A FOUL`;
+    finwin.textContent = `CONTACT ON THE DRIVE AND THAT'S A FOUL BY ${team1Name}`;
     speakText(finwin.textContent, false);
     saveGameState();
 }
@@ -443,7 +420,7 @@ function fh() {
 function fg() {
     flg += 1;
     foulwong.textContent = flg;
-    finwin.textContent = `${team2Name} COMMITS A FOUL`;
+    finwin.textContent = `OH THAT'S AN UNNECESSARY HIT, COULD BE A FLAGRANT FOUL BY ${team2Name}`;
     speakText(finwin.textContent, false);
     saveGameState();
 }
@@ -466,7 +443,7 @@ function updatetime() {
                 setTimeout(() => {
                     periodno += 1;
                     per.textContent = periodno;
-                    finwin.textContent = `PERIOD ${periodno} STARTS`;
+                    finwin.textContent = `PERIOD ${periodno} STARTS, HERE WE GO`;
                     speakText(finwin.textContent, false);
                     minutes = periodTime;
                     seconds = 0;
@@ -476,8 +453,8 @@ function updatetime() {
                     saveGameState();
                 }, breakTime);
             } else if (periodno === maxPeriod) {
-                time.textContent = "GAME OVER";
-                finwin.textContent = "GAME OVER";
+                time.textContent = "THAT'S THE WHISTLE, GAME OVER";
+                finwin.textContent = "THAT'S THE WHISTLE, GAME OVER";
                 speakText(finwin.textContent, false);
                 gameActive = false;
                 stopAmbientCommentary();
@@ -506,7 +483,7 @@ updatetimedis();
 function oneh() {
     resulth += 1;
     scoreh.textContent = resulth;
-    finwin.textContent = `${team1Name} SCORES ONE POINT`;
+    finwin.textContent = `STEPS UP TO THE LINE AND SINKS IT, ANOTHER POINT FOR ${team1Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -515,7 +492,7 @@ function oneh() {
 function oneg() {
     resultg += 1;
     scoreg.textContent = resultg;
-    finwin.textContent = `${team2Name} SCORES ONE POINT`;
+    finwin.textContent = `ONE DRIBBLE TWO DRIBBLES PERFECT SHOT, ANOTHER POINT FOR ${team2Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -524,7 +501,7 @@ function oneg() {
 function twoh() {
     resulth += 2;
     scoreh.textContent = resulth;
-    finwin.textContent = `${team1Name} SCORES TWO POINTS`;
+    finwin.textContent = `SPINS FADES AND NAILS IT BEAUTIFUL, TWO-POINT PLAY BY ${team1Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -533,7 +510,7 @@ function twoh() {
 function twog() {
     resultg += 2;
     scoreg.textContent = resultg;
-    finwin.textContent = `${team2Name} SCORES TWO POINTS`;
+    finwin.textContent = `DRIVES TO THE HOOP AND LAYS IT IN, TWO POINTS FOR ${team2Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -542,7 +519,7 @@ function twog() {
 function threeh() {
     resulth += 3;
     scoreh.textContent = resulth;
-    finwin.textContent = `${team1Name} SCORES THREE POINTS`;
+    finwin.textContent = `FROM DOWNTOWN BANG, THREE POINTS FOR ${team1Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -551,7 +528,7 @@ function threeh() {
 function threeg() {
     resultg += 3;
     scoreg.textContent = resultg;
-    finwin.textContent = `${team2Name} SCORES THREE POINTS`;
+    finwin.textContent = `CATCH FIRE BOOM, ANOTHER THREE FOR ${team2Name}`;
     speakText(finwin.textContent, false);
     winner();
     saveGameState();
@@ -567,7 +544,7 @@ function startGame() {
         seconds = 0;
         periodno = 1;
         per.textContent = periodno;
-        finwin.textContent = `PERIOD ${periodno} STARTS`;
+        finwin.textContent = `PERIOD ${periodno} STARTS, HERE WE GO`;
         speakText(finwin.textContent, false);
         updatetimedis();
         updatetime();
@@ -587,7 +564,7 @@ function pauseGame() {
     clearTimeout(timerInterval);
     document.querySelector('.start-btn').textContent = 'Resume';
     document.querySelector('.start-btn').onclick = resumeGame;
-    finwin.textContent = "GAME PAUSED";
+    finwin.textContent = "OH, THE GAME PAUSED";
     speakText(finwin.textContent, false);
     saveGameState();
 }
@@ -597,7 +574,7 @@ function resumeGame() {
     updatetime();
     document.querySelector('.start-btn').textContent = 'Pause';
     document.querySelector('.start-btn').onclick = pauseGame;
-    finwin.textContent = `PERIOD ${periodno} RESUMES`;
+    finwin.textContent = `YES, PERIOD ${periodno} RESUMES`;
     speakText(finwin.textContent, false);
     saveGameState();
 }
@@ -636,9 +613,9 @@ function winner() {
 }
 
 function finalwinner() {
-    finwin.textContent = resulth > resultg ? `${team1Name} BEATS ${team2Name} BY ${resulth - resultg} POINTS` :
-                         resulth < resultg ? `${team2Name} BEATS ${team1Name} BY ${resultg - resulth} POINTS` :
-                         `${team1Name} DRAWS WITH ${team2Name} HAVING ${resulth} POINTS EACH`;
+    finwin.textContent = resulth > resultg ? `THEY CAME THEY FOUGHT AND THEY CONQUERED, ${team1Name} BEATS ${team2Name} BY ${resulth - resultg} POINTS` :
+                         resulth < resultg ? `THEY FOUGHT TILL THE END AND IT PAYS OFF, ${team2Name} BEATS ${team1Name} BY ${resultg - resulth} POINTS` :
+                         `NO WINNERS NO LOSERS, ${team1Name} DRAWS WITH ${team2Name} HAVING ${resulth} POINTS EACH`;
     speakText(finwin.textContent, false);
     saveGameState();
 }
