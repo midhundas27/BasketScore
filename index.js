@@ -246,8 +246,8 @@ function showSetupPopup() {
             <div>
             <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team1" value="Ankle Breakers"></div>
             <div style=" margin-top: 10px;"><input maxlength="15" type="text" id="team2" value="Brick City"></div>
-            <div style=" margin-top: 10px;"><input type="number" id="totalTime" min="1" value="1"></div>
-            <div style=" margin-top: 10px;"><input type="number" id="numPeriods" min="1" value="1"></div>
+            <div style=" margin-top: 10px;"><input type="number" id="totalTime" min="1" value="4"></div>
+            <div style=" margin-top: 10px;"><input type="number" id="numPeriods" min="1" value="4"></div>
             <div style=" margin-top: 10px;"><input type="number" id="breakTimeInput" min="1" value="1"></div>
             </div>
             </div>
